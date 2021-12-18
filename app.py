@@ -3,9 +3,9 @@ from flask import Flask, render_template, request
 import pengunjung as p
 
 app = Flask(__name__)
-mk = None
 @app.route("/", methods = ["GET","POST"] )
 def pengunjung():
+    mk = None
     if request.method == "POST":
         hrs = request.form["hrs"]
         pengunjung_pred = p.pengunjung_prediction(int(hrs))
